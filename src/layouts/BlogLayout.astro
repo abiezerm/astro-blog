@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { title, ...rest } = Astro.props;
-const frontmatter = rest.frontmatter as unknown;
+// const frontmatter = rest.frontmatter as unknown;
 
 ---
 
@@ -17,12 +17,12 @@ const frontmatter = rest.frontmatter as unknown;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{frontmatter.title}</title>
+		<title>{title ?? 'Default Title'}</title>
 
         <ClientRouter />
 	</head>
 	<body class="bg-gray-900">
-        <a href="/">Home</a>
+        <a href="/" id="btn-back">Home</a>
 		<main class="mb-10 max-w-5xl m-auto py-2 px-2">
             <slot />
         </main>
