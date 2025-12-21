@@ -25,6 +25,14 @@ p {
   @apply text-white my-5;
 }
 
-a {
-  @apply text-blue-500 hover:underline;
+.pagination a {
+    @apply bg-blue-500 text-white p-2 rounded hover:bg-blue-600 cursor-pointer;
+}
+
+.pagination a.disabled {
+  @apply bg-gray-600 
+}
+
+.pagination a.disabled:hover {
+  @apply cursor-not-allowed;
 }
